@@ -1,5 +1,0 @@
-Coder has a difficulty setting up and running project.
-	-Build paths not configured properly: some libraries missing, jar files not read.
-	-Eclipse Tomcat Server not found: server needs to be built from installed tomcat jar and connected to project.
-	-JSTL codes not functioning properly: internal library not included in built path.
-
