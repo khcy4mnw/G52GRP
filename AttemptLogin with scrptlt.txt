@@ -1,0 +1,27 @@
+<%
+			
+				//data from html input
+				String accountid = request.getParameter("acID");
+				String pinnum    = request.getParameter("pin");
+ 
+ 
+				String basicsql = "SELECT accountID, pin, firstname, lastname, balance, admin FROM bnk_users";
+				//get data from sql
+				try
+				{
+					//initialise stndrd
+					Statement stndrd = mainconn.createStatement();
+					//result from executed query goes to rs
+					ResultSet rs = stndrd.executeQuery(basicsql);
+			
+					//try to find a match of both pin and login name
+					while(rs.next())
+					{
+						if(rs.getString(1).equals(accountid) && rs.getString(2).equals(pinnum))
+						{break;}
+					}
+				}
+				catch(SQLException e)
+				{System.out.println("Error in matching creds : "+e);}
+
+			%>
